@@ -5,22 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>First Learning</title>
+    <!-- Import da Ferramenta VueJS -->
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 </head>
 <body>
 
 <div id="content">
+    <!-- Carregando/Chamando os dados -->
+    {{titulo}} <br>
     {{usuario.id}} - {{usuario.nome}}
 </div>
 
      <script>
+        /* Instanciando o VueJS dentro da variável 'app' */
         var app = new Vue({
+            /* Definindo a div #content como elemento de trabalho */
             el: "#content",
+
+            /* Dados disponíveis */
             data: {
                 titulo:"Hello Word com VueJS",
                 usuario: {
                     id: 1,
-                    nome: "luiz"
+                    nome: "Luiz Rondon"
                 }
             }
         });
