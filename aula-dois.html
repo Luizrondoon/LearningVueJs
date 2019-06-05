@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>First Learning</title>
+    <!-- Import da Ferramenta VueJS -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <style>
+        .userperfil {
+            background-color: #dedede;
+            padding: 10px;
+        }
+        .userperfil .campo {
+            background-color: #a1a1a1;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<!--
+    DIRETIVAS - VUEJS
+    São códigos/termos atribuidos há uma tag/div que produzem uma ação neste elemento.
+-->
+
+<div id="content">
+    <!-- Exemplo 01 -->
+    <h1 v-if="ex1">Se este elemento foi carregado, a variável ex1 é verdadeira.</h1>
+    <h1 v-else="ex1">Se este elemento foi carregado, a variável ex1 é falsa.</h1>
+    <h1 v-show="ex1">Se este elemento está visível, a variável ex1 é verdadeira.</h1>
+
+    <!-- Exemplo 02 -->
+    <div class="userperfil" v-if="usuario.id == 2">
+        Nome: <span class="campo">{{usuario.nome}}</span>
+        Idade <span class="campo">{{usuario.idade}}</span>
+    </div>
+    <div class="userperfil" v-else>
+        Nenhum usuário encontrado!
+    </div>
+</div>
+
+     <script>
+        /* Instanciando o VueJS dentro da variável 'app' */
+        var app = new Vue({
+            /* Definindo a div #content como elemento de trabalho */
+            el: "#content",
+
+            /* Dados disponíveis */
+            data: {
+                ex1: true,
+                usuario: {
+                    id: 2,
+                    nome: "Luiz Rondon",
+                    idade: 22
+                }
+            }
+        });
+    </script>
+</body>
+</html>
